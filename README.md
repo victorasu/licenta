@@ -19,6 +19,12 @@ product panel: images
 
 recommendations based on previous searches/products per account
 
+blog panel: posts by admins
+		users can comment/rate
+
 EXTRA (involves scrapping)
 open regional competitions
 competitions panel: product-style layout -> requirements, kart types (option to search for compatible karts on the website), upcoming events
+
+EXTRA (involves google maps)
+karting circuits
