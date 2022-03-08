@@ -28,3 +28,6 @@ competitions panel: product-style layout -> requirements, kart types (option to 
 
 EXTRA (involves google maps)
 karting circuits
+
+EXTRA (charts)
+stats despre produse
