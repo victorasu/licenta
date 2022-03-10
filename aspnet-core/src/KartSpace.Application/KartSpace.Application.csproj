@@ -14,4 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\KartSpace.Core\KartSpace.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Events\Dto\" />
+  </ItemGroup>
 </Project>
