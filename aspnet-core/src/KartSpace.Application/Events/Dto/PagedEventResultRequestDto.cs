@@ -1,6 +1,8 @@
-﻿namespace KartSpace.Events.Dto;
+﻿using Abp.Application.Services.Dto;
 
-public class PagedEventResultRequestDto
+namespace KartSpace.Events.Dto;
+
+public class PagedEventResultRequestDto : PagedResultRequestDto
 {
     public string Keyword { get; set; }
 }
