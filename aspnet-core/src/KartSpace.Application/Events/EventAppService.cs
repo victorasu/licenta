@@ -46,6 +46,7 @@ public class EventAppService : AsyncCrudAppService<Event, EventDto, int, PagedEv
             .WhereIf(!input.Keyword.IsNullOrWhiteSpace(),
                 x => x.Title.Contains(input.Keyword)
                      || x.Description.Contains(input.Keyword)
-                     || x.StartTime.ToString().Contains(input.Keyword));
+                     || x.StartTime.ToString().Contains(input.Keyword)
+                     || x.EndTime.HasValue.ToString().Contains(input.Keyword));
     }
 }
