@@ -1,0 +1,13 @@
+documentatie - comparatie cu alte platforme de genu (+ si -, functs exta)
+originalitate = diferente de implementare functionalitati, unificarea mai multor solutii deja existente
+conferinta de comunicare a studentilor ish sesiunea d comunicari stiintific ale studntilro
+
+use cases, baz d date, clase pt oop
+siteseer 
+lab2
+
+tehnolgiile, pro cons la ele, de ce am ales
+
+stabilirea unei traiectorii generale legat de tehnologii (groundbreaking si untested sau safe and tested?)
+
+Traditional Multi-Page Applications and Modern Frameworks
