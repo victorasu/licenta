@@ -35,7 +35,7 @@ public class EventAppService : AsyncCrudAppService<Event, EventDto, int, PagedEv
     {
         var theEvent = ObjectMapper.Map<Event>(input);
 
-        await _eventRepository.InsertAsync(theEvent);
+        await _eventRepository.UpdateAsync(theEvent);
 
         return ObjectMapper.Map<EventDto>(theEvent);
     }
