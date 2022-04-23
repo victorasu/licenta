@@ -41,7 +41,10 @@ namespace KartSpace.Authorization.Users
         {
             CheckForTenant();
 
-            var tenant = await GetActiveTenantAsync();
+            //var tenant = await GetActiveTenantAsync();
+            var tenant = new Tenant();
+            tenant.Id = 1;
+            //registration can only be manually done for host users, where tenant Id is 1
 
             var user = new User
             {
@@ -72,9 +75,9 @@ namespace KartSpace.Authorization.Users
 
         private void CheckForTenant()
         {
-            if (!AbpSession.TenantId.HasValue)
+            if (AbpSession.TenantId.HasValue)
             {
-                throw new InvalidOperationException("Can not register host users!");
+                throw new InvalidOperationException("Can not manually register tenant users!");
             }
         }
 

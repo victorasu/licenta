@@ -146,9 +146,9 @@ namespace KartSpace.Web.Controllers
 
         private bool IsSelfRegistrationEnabled()
         {
-            if (!AbpSession.TenantId.HasValue)
+            if (AbpSession.TenantId.HasValue)
             {
-                return false; // No registration enabled for host users!
+                return false; // No registration enabled for tenant users
             }
 
             return true;

@@ -31,12 +31,12 @@
             <a href="/"><b>KartSpace</b></a>
         </div>
         <div class="card">
-            @if (MultiTenancyConfig.IsEnabled)
+            @*@if (MultiTenancyConfig.IsEnabled)
             {
                 <div class="card-header">
                     <vc:tenant-change></vc:tenant-change>
                 </div>
-            }
+            }*@
             <div class="card-body login-card-body">
                 @RenderBody()
             </div>

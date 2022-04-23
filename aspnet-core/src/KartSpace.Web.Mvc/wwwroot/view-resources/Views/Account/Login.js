@@ -20,4 +20,8 @@
             })
         );
     });
+
+    $form.getElementById("RegisterButton").onclick = function () {
+        location.href = "/Register";
+    };
 })();
