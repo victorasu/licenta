@@ -1,0 +1,72 @@
+﻿@using KartSpace.Web.Startup
+@using KartSpace.Web.Models.Events
+@using KartSpace.Authorization
+@model EventModalViewModel
+@{
+    ViewBag.Title = L("Events");
+    ViewBag.CurrentPageName = PageNames.Events;
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Events/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Events/Index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>@L("Events")</h1>
+            </div>
+            @if(IsGranted(PermissionNames.Pages_Events_Management)){
+                <div class="col-sm-6">
+                    <a href="javascript:;" data-toggle="modal" data-target="#EventCreateModal" class="btn bg-blue float-sm-right">
+                        <i class="fa fa-plus-square"></i>
+                        @L("Create")
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!--Use for bulk actions-->
+                            </div>
+                            <div class="col-md-6">
+                                @await Html.PartialAsync("~/Views/Events/Index.AdvancedSearch.cshtml")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="EventsTable" class="table table-borderless">
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Html.PartialAsync("~/Views/Events/_CreateModal.cshtml", Model)
+
+<div class="modal fade" id="EventsEditModal" tabindex="-1" role="dialog" aria-labelledby="EventEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>

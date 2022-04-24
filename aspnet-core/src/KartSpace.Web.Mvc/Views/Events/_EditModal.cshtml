@@ -1,0 +1,16 @@
+﻿@using KartSpace.Web.Models.Events
+@using KartSpace.Web.Models.Common.Modals
+@model EventModalViewModel
+@{
+    Layout = null;
+}
+@await Html.PartialAsync("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("EditEvent")))
+<form name="EventEditForm" event="form" class="form-horizontal">
+    <input type="hidden" name="Id" value="@Model.Event.Id" />
+    <div class="modal-body">
+        
+    </div>
+    @await Html.PartialAsync("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+</form>
+
+<script src="~/view-resources/Views/Events/_EditModal.js" asp-append-version="true"></script>

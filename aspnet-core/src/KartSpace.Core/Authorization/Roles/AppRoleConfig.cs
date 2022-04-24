@@ -21,7 +21,8 @@ namespace KartSpace.Authorization.Roles
             roleManagementConfig.StaticRoles.Add(
                 new StaticRoleDefinition(
                     StaticRoleNames.Tenants.Admin,
-                    MultiTenancySides.Tenant
+                    MultiTenancySides.Tenant,
+                    grantAllPermissionsByDefault: true
                 )
             );
         }

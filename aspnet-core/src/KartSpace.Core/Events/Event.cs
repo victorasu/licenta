@@ -7,7 +7,7 @@ using Abp.Timing;
 namespace KartSpace.Events;
 
 [Table("Events")]
-public class Event : Entity
+public class Event : Entity<int>
 {
     [Required]
     public string Title { get; set; }

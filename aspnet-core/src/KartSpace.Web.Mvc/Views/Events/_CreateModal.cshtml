@@ -1,0 +1,19 @@
+﻿@using KartSpace.Web.Models.Common.Modals
+@using KartSpace.Web.Models.Events
+@model EventModalViewModel
+@{
+    Layout = null;
+}
+<div class="modal fade" id="EventCreateModal" tabindex="-1" event="dialog" aria-labelledby="EventCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-lg" event="document">
+        <div class="modal-content">
+            @await Html.PartialAsync("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("CreateNewEvent")))
+            <form name="eventCreateForm" event="form" class="form-horizontal">
+                <div class="modal-body">
+                    
+                </div>
+                @await Html.PartialAsync("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+            </form>
+        </div>
+    </div>
+</div>
