@@ -14,7 +14,7 @@ public class EventDto : EntityDto<int>
     public string Description { get; set; }
 
     [Required]
-    public string Category { get; set; }
+    public TipEveniment Category { get; set; }
 
     [Required]
     public DateTime StartTime { get; set; } = Clock.Now;

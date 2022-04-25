@@ -7,5 +7,5 @@ namespace KartSpace.Events;
 
 public interface IEventAppService : IAsyncCrudAppService<EventDto, int, PagedEventResultRequestDto, EventDto, EventDto, EntityDto<int>, EntityDto<int>>
 {
-    
+    public string GetDisplayName(TipEveniment enumValue);
 }

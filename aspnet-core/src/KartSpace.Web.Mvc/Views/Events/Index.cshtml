@@ -1,4 +1,5 @@
-﻿@using KartSpace.Web.Startup
+﻿@using KartSpace.Events
+@using KartSpace.Web.Startup
 @using KartSpace.Web.Models.Events
 @using KartSpace.Authorization
 @model EventModalViewModel
@@ -22,14 +23,6 @@
             <div class="col-sm-6">
                 <h1>@L("Events")</h1>
             </div>
-            @if(IsGranted(PermissionNames.Pages_Events_Management)){
-                <div class="col-sm-6">
-                    <a href="javascript:;" data-toggle="modal" data-target="#EventCreateModal" class="btn bg-blue float-sm-right">
-                        <i class="fa fa-plus-square"></i>
-                        @L("Create")
-                    </a>
-                </div>
-            }
         </div>
     </div>
 </section>
@@ -40,10 +33,25 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-md-6">
-                                <!--Use for bulk actions-->
+                            <div class="col-md-2">
+                                <label class="col-form-label" for="TipEvent">@L("TipEveniment")</label>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-2" id="toolbox">
+                                <select asp-for="Event.Category" asp-items="@Html.GetEnumSelectList<TipEveniment>()" id="TipEvent" name="TipEvent" class="form-control">
+                                </select>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2">
+                                @if(IsGranted(PermissionNames.Pages_Events_Management)){
+                                    <div class="">
+                                        <a href="javascript:;" data-toggle="modal" data-target="#EventCreateModal" class="btn bg-blue float-sm-right">
+                                            <i class="fa fa-plus-square"></i>
+                                            @L("Create")
+                                        </a>
+                                    </div>
+                                }
+                            </div>
+                            <div class="col-md-4">
                                 @await Html.PartialAsync("~/Views/Events/Index.AdvancedSearch.cshtml")
                             </div>
                         </div>

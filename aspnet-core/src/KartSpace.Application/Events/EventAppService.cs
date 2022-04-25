@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
@@ -49,5 +51,23 @@ public class EventAppService : AsyncCrudAppService<Event, EventDto, int, PagedEv
                      || x.StartTime.ToString().Contains(input.Keyword)
                      || x.EndTime.HasValue.ToString().Contains(input.Keyword));
         return events;
+    }
+
+    public string GetDisplayName(TipEveniment enumValue)
+    {
+        string displayName;
+
+        displayName = enumValue.GetType()
+            .GetMember(enumValue.ToString())
+            .FirstOrDefault()
+            .GetCustomAttribute<DisplayAttribute>()?
+            .GetName();
+
+        if (String.IsNullOrEmpty(displayName))
+        {
+            displayName = enumValue.ToString();
+        }
+
+        return displayName;
     }
 }

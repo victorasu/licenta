@@ -39,6 +39,7 @@
                 autoWidth: false,
                 defaultContent: '',
                 render: (data, type, row, meta) => {
+                    console.log(row);
                     if (abp.auth.isGranted('Pages.Events.Management')) {
                         return [
                             `<div class="card">`,
@@ -57,7 +58,7 @@
                             `    ${row.description}`,
                             `  </div>`,
                             `  <div class="card-footer">`,
-                            `      <span class="badge badge-primary">${row.category}</span>`,
+                            `      <span class="badge badge-primary">${getDisplay(row.category)}</span>`,
                             `  </div>`,
                             `</div>`
                         ].join('');
@@ -68,7 +69,7 @@
                             `  <div class="card-header">`,
                             `    <h3 class="card-title">${row.title}</h3>`,
                             `    <div class="card-tools">`,
-                            `      <span class="badge badge-primary">${row.category}</span>`,
+                            `      <span class="badge badge-primary">${_eventService.getDisplayName(row.category).result}</span>`,
                             `    </div>`,
                             `  </div>`,
                             `  <div class="card-body">`,
@@ -80,6 +81,21 @@
                 }
             }
         ]
+    });
+
+    function getDisplay(data) {
+        var x = _eventService
+            .getDisplayName(data)
+            .then(function (e) {
+                console.log(e + " test");
+                return JSON.stringify(e);
+            });
+        console.log(x);
+        return x;
+    };
+
+    $("#TipEvent").on('change', (e) => {
+        console.log(getDisplay(1) + "Vrajlea");
     });
 
     _$form.find('.save-button').on('click', (e) => {

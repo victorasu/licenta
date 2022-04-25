@@ -1,5 +1,6 @@
 ﻿@using KartSpace.Web.Models.Common.Modals
 @using KartSpace.Web.Models.Events
+@using KartSpace.Events
 @model EventModalViewModel
 @{
     Layout = null;
@@ -27,7 +28,8 @@
                             <div class="form-group row required">
                                 <label class="col-md-3 col-form-label">@L("Category")</label>
                                 <div class="col-md-9">
-                                    <input asp-for="Event.Category" type="text" class="form-control" name="Category" required>
+                                    <select asp-for="Event.Category" asp-items="@Html.GetEnumSelectList<TipEveniment>()" id="Category" name="Category" class="form-control">
+                                </select>
                                 </div>
                             </div>
                             <div class="form-group row required">
