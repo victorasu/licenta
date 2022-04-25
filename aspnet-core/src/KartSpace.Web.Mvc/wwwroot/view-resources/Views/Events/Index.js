@@ -43,16 +43,21 @@
                         return [
                             `<div class="card">`,
                             `  <div class="card-header">`,
-                            `    <h3 class="card-title">Default Card Example</h3>`,
+                            `    <h3 class="card-title">${row.title}</h3>`,
                             `    <div class="card-tools">`,
-                            `      <span class="badge badge-primary">Label</span>`,
+                            `    <button type="button" class="btn btn-sm bg-secondary edit-event" data-event-id="${row.id}" data-toggle="modal" data-target="#EventEditModal">`,
+                            `        <i class="fas fa-pencil-alt"></i> ${l('Edit')}`,
+                            '    </button>',
+                            `    <button type="button" class="btn btn-sm bg-danger delete-event" data-event-id="${row.id}" data-event-title="${row.title}">`,
+                            `        <i class="fas fa-trash"></i> ${l('Delete')}`,
+                            '    </button>',
                             `    </div>`,
                             `  </div>`,
                             `  <div class="card-body">`,
-                            `    The body of the card`,
+                            `    ${row.description}`,
                             `  </div>`,
                             `  <div class="card-footer">`,
-                            `    The footer of the card`,
+                            `      <span class="badge badge-primary">${row.category}</span>`,
                             `  </div>`,
                             `</div>`
                         ].join('');
@@ -61,15 +66,14 @@
                         return [
                             `<div class="card">`,
                             `  <div class="card-header">`,
-                            `    <h3 class="card-title">Default Card Example</h3>`,
+                            `    <h3 class="card-title">${row.title}</h3>`,
                             `    <div class="card-tools">`,
-                            `      <span class="badge badge-primary">Label</span>`,
+                            `      <span class="badge badge-primary">${row.category}</span>`,
                             `    </div>`,
                             `  </div>`,
                             `  <div class="card-body">`,
-                            `    The body of the card`,
+                            `    ${row.description}`,
                             `  </div>`,
-                            `</div>`
                         ].join('');
                     }
                     
@@ -102,11 +106,63 @@
             });
     });
 
+    $(function () {
+        $("#StartTime").datetimepicker({
+            locale: 'ro',
+            icons: {
+                time: 'fa fa-clock',
+                date: 'fa fa-calendar',
+                up: 'fa fa-chevron-up',
+                down: 'fa fa-chevron-down',
+                previous: 'fa fa-chevron-left',
+                next: 'fa fa-chevron-right',
+                today: "fa fa-desktop",
+                clear: 'fa fa-trash',
+                close: 'fa fa-times'
+            },
+            format: "MM.DD.YYYY",
+            sideBySide: true,
+            showTodayButton: true,
+            showClose: true,
+            toolbarPlacement: "bottom",
+            allowInputToggle: true
+        });
+
+        $("#EndTime").datetimepicker({
+            locale: 'ro',
+            icons: {
+                time: 'fa fa-clock',
+                date: 'fa fa-calendar',
+                up: 'fa fa-chevron-up',
+                down: 'fa fa-chevron-down',
+                previous: 'fa fa-chevron-left',
+                next: 'fa fa-chevron-right',
+                today: "fa fa-desktop",
+                clear: 'fa fa-trash',
+                close: 'fa fa-times'
+            },
+            format: "MM.DD.YYYY",
+            sideBySide: true,
+            showTodayButton: true,
+            showClose: true,
+            toolbarPlacement: "bottom",
+            allowInputToggle: true,
+            useCurrent: false
+        });
+
+        $("#StartTime").on("dp.change", function (e) {
+            $('#EndTime').data("DateTimePicker").minDate(e.date);
+        });
+        $("#EndTime").on("dp.change", function (e) {
+            $('#StartTime').data("DateTimePicker").maxDate(e.date);
+        });
+    });
+
     $(document).on('click', '.delete-event', function () {
         var eventId = $(this).attr("data-event-id");
-        var eventName = $(this).attr('data-event-name');
+        var eventTitle = $(this).attr('data-event-title');
 
-        deleteEvent(eventId, eventName);
+        deleteEvent(eventId, eventTitle);
     });
 
     $(document).on('click', '.edit-event', function (e) {

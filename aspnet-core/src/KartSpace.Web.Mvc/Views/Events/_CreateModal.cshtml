@@ -10,7 +10,50 @@
             @await Html.PartialAsync("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("CreateNewEvent")))
             <form name="eventCreateForm" event="form" class="form-horizontal">
                 <div class="modal-body">
-                    
+                    <div class="tab-content mt-4">
+                        <div role="tabpanel" class="tab-pane container active" id="create-event-details">
+                            <div class="form-group row required">
+                                <label class="col-md-3 col-form-label">@L("Title")</label>
+                                <div class="col-md-9">
+                                    <input asp-for="Event.Title" type="text" class="form-control" name="Title" required>
+                                </div>
+                            </div>
+                            <div class="form-group row required">
+                                <label class="col-md-3 col-form-label">@L("Description")</label>
+                                <div class="col-md-9">
+                                    <input asp-for="Event.Description" type="text" class="form-control" name="Description" required>
+                                </div>
+                            </div>
+                            <div class="form-group row required">
+                                <label class="col-md-3 col-form-label">@L("Category")</label>
+                                <div class="col-md-9">
+                                    <input asp-for="Event.Category" type="text" class="form-control" name="Category" required>
+                                </div>
+                            </div>
+                            <div class="form-group row required">
+                                <label class="col-md-3 col-form-label">@L("StartTime")</label>
+                                <div class="col-md-9">
+                                    <div class='input-group date' id="StartTime">
+                                        <input asp-for="Event.StartTime" name="StartTime" type="text" class="form-control" required value=""/>
+                                        <span class="input-group-addon input-group-text input-group-append">
+                                            <span class="fa fa-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">@L("EndTime")</label>
+                                <div class="col-md-9">
+                                    <div class='input-group date' id="EndTime">
+                                        <input asp-for="Event.EndTime" name="Endtime" type="text" class="form-control" value=""/>
+                                        <span class="input-group-addon input-group-text input-group-append">
+                                            <span class="fa fa-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 @await Html.PartialAsync("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
             </form>

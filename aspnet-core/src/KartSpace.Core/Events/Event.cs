@@ -16,6 +16,9 @@ public class Event : Entity<int>
     public string Description { get; set; }
 
     [Required]
+    public string Category { get; set; }
+
+    [Required]
     public DateTime StartTime { get; set; }
 
     public DateTime? EndTime { get; set; }

@@ -184,6 +184,28 @@
     {
       "library": "push.js@1.0.9",
       "destination": "wwwroot/libs/push.js"
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "tempusdominus-bootstrap-4@5.39.0",
+      "destination": "wwwroot/libs/tempusdominus-bootstrap-4/"
+    },
+    {
+      "library": "eonasdan-bootstrap-datetimepicker@4.17.49",
+      "destination": "wwwroot/libs/eonasdan-bootstrap-datetimepicker/"
+    },
+    {
+      "library": "bootstrap-datepicker@1.9.0",
+      "destination": "wwwroot/libs/bootstrap-datepicker/"
+    },
+    {
+      "library": "select2@4.0.13",
+      "destination": "wwwroot/libs/select2/"
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "select2-bootstrap4-theme@1.0.0",
+      "destination": "wwwroot/libs/select2-bootstrap4-theme/"
     }
     //other libs end
   ]
