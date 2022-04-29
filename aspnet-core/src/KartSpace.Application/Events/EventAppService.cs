@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
@@ -51,6 +52,26 @@ public class EventAppService : AsyncCrudAppService<Event, EventDto, int, PagedEv
                      || x.StartTime.ToString().Contains(input.Keyword)
                      || x.EndTime.HasValue.ToString().Contains(input.Keyword));
         return events;
+    }
+
+    public async Task<List<EventResultDto>> GetEventsList(PagedEventResultRequestDto input, TipEveniment category)
+    {
+        var events = CreateFilteredQuery(input);
+
+        var query = from eveniment in events
+                    where (category.Equals(TipEveniment.Alege) ? true : eveniment.Category.Equals(category))
+                    select eveniment;
+
+        var queryRez = await AsyncQueryableExecuter.ToListAsync(query);
+
+        var eventList = queryRez.Select(x =>
+        {
+            var lista = ObjectMapper.Map<EventResultDto>(x);
+            lista.CategoryName = GetDisplayName(lista.Category);
+            return lista;
+        }).ToList();
+
+        return eventList;
     }
 
     public string GetDisplayName(TipEveniment enumValue)

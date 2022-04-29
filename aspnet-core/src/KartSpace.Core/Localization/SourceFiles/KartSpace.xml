@@ -119,8 +119,16 @@
     <text name="UsersActivation">Users activation</text>
   
     <!-- #region Events -->
-	  <text name="Events">Events</text>
-	  <text name="EventsManagement">Events Management</text>
+	<text name="TipEveniment">Event type</text>
+	<text name="EditEvent">Edit event</text>
+	<text name="Title">Title</text>
+	<text name="Description">Description</text>
+	<text name="Category">Category</text>
+	<text name="StartTime">Start time</text>
+	<text name="EndTime">End time</text>
+	<text name="CreateNewEvent">Create new event</text>
+	<text name="Events">Events</text>
+	<text name="EventsManagement">Events Management</text>
     <!-- #endregion -->
   </texts>
 </localizationDictionary>

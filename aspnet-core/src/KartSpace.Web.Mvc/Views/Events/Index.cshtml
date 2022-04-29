@@ -33,14 +33,14 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-md-1">
                                 <label class="col-form-label" for="TipEvent">@L("TipEveniment")</label>
                             </div>
                             <div class="col-md-2" id="toolbox">
                                 <select asp-for="Event.Category" asp-items="@Html.GetEnumSelectList<TipEveniment>()" id="TipEvent" name="TipEvent" class="form-control">
                                 </select>
                             </div>
-                            <div class="col-md-2"></div>
+                            <div class="col-md-3"></div>
                             <div class="col-md-2">
                                 @if(IsGranted(PermissionNames.Pages_Events_Management)){
                                     <div class="">

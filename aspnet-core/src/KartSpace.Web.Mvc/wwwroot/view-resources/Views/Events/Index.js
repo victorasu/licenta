@@ -4,15 +4,22 @@
         _$modal = $('#EventCreateModal'),
         _$form = _$modal.find('form'),
         _$table = $('#EventsTable');
+    console.log(_eventService.getEventsList);
 
     var _$eventsTable = _$table.DataTable({
         paging: true,
         serverSide: true,
-        listAction: {
-            ajaxFunction: _eventService.getAll,
-            inputFilter: function () {
-                return $('#EventsSearchForm').serializeFormToObject(true);
-            }
+        ajax: function (data, callback, settings) {
+            var input = $('#EventsSearchForm').serializeFormToObject(true);
+            var tipEvent = $('#TipEvent').val();
+
+            _eventService.getEventsList(input, tipEvent).done(function (result) {
+                callback({
+                    data: result
+                });
+            }).always(function () {
+                abp.ui.clearBusy(_$eventsTable);
+            });
         },
         buttons: [
             {
@@ -39,9 +46,8 @@
                 autoWidth: false,
                 defaultContent: '',
                 render: (data, type, row, meta) => {
-                    console.log(row);
                     if (abp.auth.isGranted('Pages.Events.Management')) {
-                        return [
+;                        return [
                             `<div class="card">`,
                             `  <div class="card-header">`,
                             `    <h3 class="card-title">${row.title}</h3>`,
@@ -58,7 +64,7 @@
                             `    ${row.description}`,
                             `  </div>`,
                             `  <div class="card-footer">`,
-                            `      <span class="badge badge-primary">${getDisplay(row.category)}</span>`,
+                            `      <span class="badge badge-primary">${row.categoryName}</span>`,
                             `  </div>`,
                             `</div>`
                         ].join('');
@@ -69,7 +75,7 @@
                             `  <div class="card-header">`,
                             `    <h3 class="card-title">${row.title}</h3>`,
                             `    <div class="card-tools">`,
-                            `      <span class="badge badge-primary">${_eventService.getDisplayName(row.category).result}</span>`,
+                            `      <span class="badge badge-primary">${row.categoryName}</span>`,
                             `    </div>`,
                             `  </div>`,
                             `  <div class="card-body">`,
@@ -83,19 +89,9 @@
         ]
     });
 
-    function getDisplay(data) {
-        var x = _eventService
-            .getDisplayName(data)
-            .then(function (e) {
-                console.log(e + " test");
-                return JSON.stringify(e);
-            });
-        console.log(x);
-        return x;
-    };
 
     $("#TipEvent").on('change', (e) => {
-        console.log(getDisplay(1) + "Vrajlea");
+        _$eventsTable.ajax.reload();
     });
 
     _$form.find('.save-button').on('click', (e) => {
@@ -106,7 +102,6 @@
         }
 
         var event = _$form.serializeFormToObject();
-
 
         abp.ui.setBusy(_$modal);
         _eventService

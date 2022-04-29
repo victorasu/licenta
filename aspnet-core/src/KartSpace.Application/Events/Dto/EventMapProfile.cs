@@ -8,5 +8,7 @@ public class EventMapProfile : Profile
     {
         CreateMap<EventDto, Event>();
         CreateMap<Event, EventDto>();
+        CreateMap<EventResultDto, Event>();
+        CreateMap<Event, EventResultDto>();
     }
 }

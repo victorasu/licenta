@@ -10,14 +10,6 @@
         }
 
         var event = _$form.serializeFormToObject();
-        event.grantedPermissions = [];
-        var _$permissionCheckboxes = _$form[0].querySelectorAll("input[name='permission']:checked");
-        if (_$permissionCheckboxes) {
-            for (var permissionIndex = 0; permissionIndex < _$permissionCheckboxes.length; permissionIndex++) {
-                var _$permissionCheckbox = $(_$permissionCheckboxes[permissionIndex]);
-                event.grantedPermissions.push(_$permissionCheckbox.val());
-            }
-        }
 
         abp.ui.setBusy(_$form);
         _eventService.update(event).done(function () {
