@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace KartSpace.Events
 {
@@ -19,6 +18,6 @@ namespace KartSpace.Events
         [Display(Name = "Campionatul international")]
         CampionatulInternational = 4,
         [Display(Name = "Gala campionilor")]
-        GalaCampionilor = 5,
+        GalaCampionilor = 5
     }
 }

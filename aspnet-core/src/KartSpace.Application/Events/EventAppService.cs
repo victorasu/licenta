@@ -6,7 +6,6 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
-using Abp.Collections.Extensions;
 using Abp.Domain.Repositories;
 using Abp.Extensions;
 using Abp.Linq.Extensions;
@@ -14,6 +13,9 @@ using KartSpace.Events.Dto;
 
 namespace KartSpace.Events;
 
+/// <summary>
+/// Application service for the events section
+/// </summary>
 public class EventAppService : AsyncCrudAppService<Event, EventDto, int, PagedEventResultRequestDto, EventDto, EventDto, EntityDto<int>, EntityDto<int>>, IEventAppService
 {
     private readonly IRepository<Event, int> _eventRepository;
@@ -25,6 +27,11 @@ public class EventAppService : AsyncCrudAppService<Event, EventDto, int, PagedEv
         _eventRepository = eventRepository;
     }
 
+    /// <summary>
+    /// Asynchronous method for creating an Event entity and inserting it into the database
+    /// </summary>
+    /// <param name="input">Event DTO data, does not contain Id</param>
+    /// <returns>EventDto of the inserted Event</returns>
     public override async Task<EventDto> CreateAsync(EventDto input)
     {
         var theEvent = ObjectMapper.Map<Event>(input);
@@ -34,6 +41,11 @@ public class EventAppService : AsyncCrudAppService<Event, EventDto, int, PagedEv
         return ObjectMapper.Map<EventDto>(theEvent);
     }
 
+    /// <summary>
+    /// Asynchronous method for updating an Event entity's data in the database
+    /// </summary>
+    /// <param name="input">Event DTO data, contains Id</param>
+    /// <returns>EventDto of the updated Event</returns>
     public override async Task<EventDto> UpdateAsync(EventDto input)
     {
         var theEvent = ObjectMapper.Map<Event>(input);
@@ -43,6 +55,11 @@ public class EventAppService : AsyncCrudAppService<Event, EventDto, int, PagedEv
         return ObjectMapper.Map<EventDto>(theEvent);
     }
 
+    /// <summary>
+    /// Filters the database records of Events by using pagination data
+    /// </summary>
+    /// <param name="input">Filter keyword, pagination and skip count</param>
+    /// <returns>IQueryable of filtered Events</returns>
     protected override IQueryable<Event> CreateFilteredQuery(PagedEventResultRequestDto input)
     {
         var events = _eventRepository.GetAll()
@@ -54,7 +71,13 @@ public class EventAppService : AsyncCrudAppService<Event, EventDto, int, PagedEv
         return events;
     }
 
-    public async Task<List<EventResultDto>> GetEventsList(PagedEventResultRequestDto input, TipEveniment category)
+    /// <summary>
+    /// Filters events by input filter and selected category
+    /// </summary>
+    /// <param name="input">Filter keyword, pagination and skip count</param>
+    /// <param name="category">Category type provided in the UI dropdown</param>
+    /// <returns>List of Event objects</returns>
+    public async Task<PagedResultDto<EventResultDto>> GetEventsList(PagedEventResultRequestDto input, TipEveniment category)
     {
         var events = CreateFilteredQuery(input);
 
@@ -71,9 +94,16 @@ public class EventAppService : AsyncCrudAppService<Event, EventDto, int, PagedEv
             return lista;
         }).ToList();
 
-        return eventList;
+        var eventDisplay = new PagedResultDto<EventResultDto>(eventList.Count, eventList);
+
+        return eventDisplay;
     }
 
+    /// <summary>
+    /// Gets <see cref="TipEveniment"/> value's DisplayName
+    /// </summary>
+    /// <param name="enumValue">Value of selected Enum option</param>
+    /// <returns>Selected Enum option's DisplayName</returns>
     public string GetDisplayName(TipEveniment enumValue)
     {
         string displayName;

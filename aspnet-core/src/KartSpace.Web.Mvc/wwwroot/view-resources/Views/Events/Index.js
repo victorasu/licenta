@@ -4,7 +4,6 @@
         _$modal = $('#EventCreateModal'),
         _$form = _$modal.find('form'),
         _$table = $('#EventsTable');
-    console.log(_eventService.getEventsList);
 
     var _$eventsTable = _$table.DataTable({
         paging: true,
@@ -12,10 +11,14 @@
         ajax: function (data, callback, settings) {
             var input = $('#EventsSearchForm').serializeFormToObject(true);
             var tipEvent = $('#TipEvent').val();
+            input.maxResultCount = data.length;
+            input.skipCount = data.start;
 
             _eventService.getEventsList(input, tipEvent).done(function (result) {
                 callback({
-                    data: result
+                    data: result.items,
+                    recordsTotal: result.totalCount,
+                    recordsFiltered: result.totalCount
                 });
             }).always(function () {
                 abp.ui.clearBusy(_$eventsTable);

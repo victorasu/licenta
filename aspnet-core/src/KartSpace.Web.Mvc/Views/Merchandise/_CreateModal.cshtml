@@ -1,0 +1,48 @@
+﻿@using KartSpace.Web.Models.Common.Modals
+@using KartSpace.Web.Models.Merchandise
+@using KartSpace.Merchandise
+@model MerchModalViewModel
+@{
+    Layout = null;
+}
+<div class="modal fade" id="MerchCreateModal" tabindex="-1" event="dialog" aria-labelledby="MerchCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-lg" Merch="document">
+        <div class="modal-content">
+            @await Html.PartialAsync("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("CreateNewMerch")))
+            <form name="merchCreateForm" event="form" class="form-horizontal">
+                <div class="modal-body">
+                    <div class="tab-content mt-4">
+                        <div role="tabpanel" class="tab-pane container active" id="create-merch-details">
+                            <div class="form-group row required">
+                                <label class="col-md-3 col-form-label">@L("Name")</label>
+                                <div class="col-md-9">
+                                    <input asp-for="Merch.Name" type="text" class="form-control" name="Name" required>
+                                </div>
+                            </div>
+                            <div class="form-group row required">
+                                <label class="col-md-3 col-form-label">@L("Description")</label>
+                                <div class="col-md-9">
+                                    <input asp-for="Merch.Description" type="text" class="form-control" name="Description" required>
+                                </div>
+                            </div>
+                            <div class="form-group row required">
+                                <label class="col-md-3 col-form-label">@L("Category")</label>
+                                <div class="col-md-9">
+                                    <select asp-for="Merch.Category" asp-items="@Html.GetEnumSelectList<TipMerch>()" id="Category" name="Category" class="form-control">
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group row required">
+                                <label class="col-md-3 col-form-label">@L("Price")</label>
+                                <div class="col-md-9">
+                                    <input asp-for="Merch.Price" type="text" class="form-control" name="Price" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @await Html.PartialAsync("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+            </form>
+        </div>
+    </div>
+</div>

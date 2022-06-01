@@ -254,3 +254,6 @@ paket-files/
 src/KartSpace.Web.Mvc/secrets.json
 src/KartSpace.Web.Host/secrets.json
 src/KartSpace.Migrator/secrets.json
+
+#build data
+build/outputs/*

@@ -56,11 +56,20 @@ namespace KartSpace.Web.Startup
                 )
                 .AddItem(
                     new MenuItemDefinition(
-                                PageNames.Events,
-                                L("Events"),
-                                url: "Events",
-                                icon: "fas fa-circle",
-                                requiresAuthentication: true
+                        PageNames.Events,
+                        L("Events"),
+                        url: "Events",
+                        icon: "fas fa-circle",
+                        requiresAuthentication: true
+                    )
+                )
+                .AddItem(
+                    new MenuItemDefinition(
+                        PageNames.Merchandise,
+                        L("Merchandise"),
+                        url: "Merchandise",
+                        icon: "fas fa-circle",
+                        requiresAuthentication: true
                     )
                 );
             //.AddItem( // Menu items below is just for demonstration!

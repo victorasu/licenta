@@ -1,0 +1,83 @@
+﻿@using KartSpace.Web.Startup
+@using KartSpace.Web.Models.Merchandise
+@using KartSpace.Authorization
+@using Abp.MultiTenancy
+@using KartSpace.Merchandise
+@model MerchModalViewModel
+@{
+    ViewBag.Title = L("Merchandise");
+    ViewBag.CurrentPageName = PageNames.Merchandise;
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Merchandise/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Merchandise/Index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>@L("Merchandise")</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <label class="col-form-label" for="Merch.Category">@L("TipMerch")</label>
+                            </div>
+                            <div class="col-md-2" id="toolbox">
+                                <select asp-for="Merch.Category" asp-items="@Html.GetEnumSelectList<TipMerch>()" id="TipMerch" name="TipMerch" class="form-control">
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+
+                            </div>
+                            <div class="col-md-2">
+                                @if(IsGranted(PermissionNames.Pages_Merch_Management) && AbpSession.MultiTenancySide.Equals(MultiTenancySides.Tenant)){
+                                    <div class="">
+                                        <a href="javascript:;" data-toggle="modal" data-target="#MerchCreateModal" class="btn bg-blue float-sm-right">
+                                            <i class="fa fa-plus-square"></i>
+                                            @L("Create")
+                                        </a>
+                                    </div>
+                                }
+                            </div>
+                            <div class="col-md-4">
+                                @await Html.PartialAsync("~/Views/Merchandise/Index.AdvancedSearch.cshtml")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="MerchTable" class="table table-borderless">
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Html.PartialAsync("~/Views/Merchandise/_CreateModal.cshtml", Model)
+
+<div class="modal fade" id="MerchEditModal" tabindex="-1" role="dialog" aria-labelledby="MerchEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
