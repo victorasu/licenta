@@ -12288,3 +12288,210 @@ ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
 WARN  2022-06-04 16:54:24,160 [3    ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
    at System.Net.Dns.GetHostEntry(IPAddress address)
    at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:54:29,172 [3    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:54:29,174 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:54:29,174 [3    ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:54:34,185 [3    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:54:34,187 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:54:34,187 [3    ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:54:39,210 [37   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:54:39,210 [37   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:54:39,210 [37   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:54:44,212 [3    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:54:44,213 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:54:44,213 [3    ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:54:49,216 [37   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:54:49,217 [37   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:54:49,217 [37   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:54:54,228 [37   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:54:54,229 [37   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:54:54,229 [37   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:54:59,232 [37   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:54:59,232 [37   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:54:59,233 [37   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:55:04,246 [37   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:55:04,247 [37   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:55:04,247 [37   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:55:09,257 [37   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:55:09,258 [37   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:55:09,258 [37   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:55:14,261 [38   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:55:14,262 [38   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:55:14,262 [38   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:55:19,281 [38   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:55:19,282 [38   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:55:19,282 [38   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:55:24,293 [38   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:55:24,293 [38   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:55:24,293 [38   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:55:29,312 [38   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:55:29,313 [38   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:55:29,313 [38   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:55:34,321 [37   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:55:34,321 [37   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:55:34,321 [37   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:55:39,325 [37   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:55:39,327 [37   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:55:39,327 [37   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:55:44,348 [37   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:55:44,351 [37   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:55:44,351 [37   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:55:49,366 [3    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:55:49,366 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:55:49,367 [3    ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:55:54,382 [37   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:55:54,382 [37   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:55:54,383 [37   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:55:59,395 [38   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:55:59,396 [38   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:55:59,396 [38   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:56:04,414 [38   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:56:04,415 [38   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:56:04,415 [38   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:56:09,429 [38   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:56:09,429 [38   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:56:09,429 [38   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:56:14,435 [38   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:56:14,435 [38   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:56:14,435 [38   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
+INFO  2022-06-04 16:56:19,444 [38   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.5 initialized 'KartSpaceDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+INFO  2022-06-04 16:56:19,444 [38   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+WARN  2022-06-04 16:56:19,445 [38   ] c.Auditing.HttpContextClientInfoProvider - System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at System.Net.Dns.GetHostEntry(IPAddress address)
+   at Abp.AspNetCore.Mvc.Auditing.HttpContextClientInfoProvider.GetComputerName()
