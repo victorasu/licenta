@@ -6,6 +6,9 @@
         _$table = $('#EventsTable');
 
     var _$eventsTable = _$table.DataTable({
+        language: {
+            url: `//cdn.datatables.net/plug-ins/1.12.1/i18n/${abp.localization.currentLanguage.name}.json`
+        },
         paging: true,
         serverSide: true,
         ajax: function (data, callback, settings) {

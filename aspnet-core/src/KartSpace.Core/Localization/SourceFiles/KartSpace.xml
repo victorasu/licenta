@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<localizationDictionary culture="en">
+<localizationDictionary culture="en-GB">
   <texts>
     <text name="HomePage" value="Home page" />
     <text name="About" value="About" />
@@ -117,7 +117,7 @@
     <text name="ResetPasswordStepOneInfo">1. Enter your administrator password</text>
     <text name="ResetPasswordStepTwoInfo">2. Copy this random password so you can send it to the user</text>
     <text name="UsersActivation">Users activation</text>
-  
+
     <!-- #region Events -->
 	<text name="TipEveniment">Event type</text>
 	<text name="EditEvent">Edit event</text>
@@ -130,5 +130,14 @@
 	<text name="Events">Events</text>
 	<text name="EventsManagement">Events Management</text>
     <!-- #endregion -->
+
+    <!-- #region Merch -->
+	<text name="Merchandise">Merchandise</text>
+	<text name="TipMerch">Merch category</text>
+	<text name="EditMerch">Edit merch</text>
+	<text name="CreateNewMerch">Create new merch</text>
+	<text name="Price">Price</text>
+	<text name="MerchManagement">Merchandise Management</text>
+	<!-- #endregion -->
   </texts>
 </localizationDictionary>

@@ -17,7 +17,7 @@ namespace KartSpace.EntityFrameworkCore.Seed.Host
             var tenantId = KartSpaceConsts.MultiTenancyEnabled ? null : (int?)MultiTenancyConsts.DefaultTenantId;
             return new List<ApplicationLanguage>
             {
-                new ApplicationLanguage(tenantId, "en", "English", "famfamfam-flags us"),
+                new ApplicationLanguage(tenantId, "en-GB", "English", "famfamfam-flags gb"),
                 new ApplicationLanguage(tenantId, "ro", "Română", "famfamfam-flags ro")
             };
         }
