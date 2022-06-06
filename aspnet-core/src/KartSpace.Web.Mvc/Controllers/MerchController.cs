@@ -32,4 +32,16 @@ public class MerchandiseController : KartSpaceControllerBase
 
         return PartialView("_EditModal", model);
     }
+
+    public async Task<ActionResult> BuyModal(int merchId)
+    {
+        var theProduct = await _merchAppService.GetAsync(new EntityDto<int>(merchId));
+        var model = new MerchModalViewModel()
+        {
+            Merch = theProduct,
+            PhoneNumber = ""
+        };
+
+        return PartialView("_BuyModal", model);
+    }
 }

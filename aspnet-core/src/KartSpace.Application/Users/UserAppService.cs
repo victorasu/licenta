@@ -246,6 +246,15 @@ namespace KartSpace.Users
 
             return true;
         }
+
+        public IQueryable<User> GetAllUsers()
+        {
+            using (UnitOfWorkManager.Current.SetTenantId(null))
+            {
+                var users = Repository.GetAll().Where(x => x.TenantId == null);
+                return users;
+            }
+        }
     }
 }
 

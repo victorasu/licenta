@@ -214,35 +214,35 @@ namespace KartSpace.Web.Controllers
 
                 await _unitOfWorkManager.Current.SaveChangesAsync();
 
-                Debug.Assert(user.TenantId != null);
+                //Debug.Assert(user.TenantId != null);
 
-                var tenant = await _tenantManager.GetByIdAsync(user.TenantId.Value);
+                //var tenant = await _tenantManager.GetByIdAsync(user.TenantId.Value);
 
-                // Directly login if possible
-                if (user.IsActive && (user.IsEmailConfirmed || !isEmailConfirmationRequiredForLogin))
-                {
-                    AbpLoginResult<Tenant, User> loginResult;
-                    if (externalLoginInfo != null)
-                    {
-                        loginResult = await _logInManager.LoginAsync(externalLoginInfo, tenant.TenancyName);
-                    }
-                    else
-                    {
-                        loginResult = await GetLoginResultAsync(user.UserName, model.Password, tenant.TenancyName);
-                    }
+                //// Directly login if possible
+                //if (user.IsActive && (user.IsEmailConfirmed || !isEmailConfirmationRequiredForLogin))
+                //{
+                //    AbpLoginResult<Tenant, User> loginResult;
+                //    if (externalLoginInfo != null)
+                //    {
+                //        loginResult = await _logInManager.LoginAsync(externalLoginInfo, tenant.TenancyName);
+                //    }
+                //    else
+                //    {
+                //        loginResult = await GetLoginResultAsync(user.UserName, model.Password, tenant.TenancyName);
+                //    }
 
-                    if (loginResult.Result == AbpLoginResultType.Success)
-                    {
-                        await _signInManager.SignInAsync(loginResult.Identity, false);
-                        return Redirect(GetAppHomeUrl());
-                    }
+                //    if (loginResult.Result == AbpLoginResultType.Success)
+                //    {
+                //        await _signInManager.SignInAsync(loginResult.Identity, false);
+                //        return Redirect(GetAppHomeUrl());
+                //    }
 
-                    Logger.Warn("New registered user could not be login. This should not be normally. login result: " + loginResult.Result);
-                }
+                //    Logger.Warn("New registered user could not be login. This should not be normally. login result: " + loginResult.Result);
+                //}
 
                 return View("RegisterResult", new RegisterResultViewModel
                 {
-                    TenancyName = tenant.TenancyName,
+                    TenancyName = "Host",
                     NameAndSurname = user.Name + " " + user.Surname,
                     UserName = user.UserName,
                     EmailAddress = user.EmailAddress,

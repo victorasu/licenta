@@ -76,26 +76,46 @@
                         ].join('');
                     }
                     else {
-                        return [
-                            `<div class="card">`,
-                            `  <div class="card-header">`,
-                            `    <h3 class="card-title">${row.name}</h3>`,
-                            `    <div class="card-tools">`,
-                            `      <span class="badge badge-primary">${row.price}$</span> <span class="badge badge-secondary">${row.categoryName}</span>`,
-                            `    </div>`,
-                            `  </div>`,
-                            `  <div class="card-body">`,
-                            `    ${row.description}`,
-                            `  </div>`,
-                            `</div>`
-                        ].join('');
+                        if (abp.session.multiTenancySide == 2) {
+                            return [
+                                `<div class="card">`,
+                                `  <div class="card-header">`,
+                                `    <h3 class="card-title">${row.name}</h3>`,
+                                `    <div class="card-tools">`,
+                                `    <button type="button" class="btn btn-sm bg-gradient-info buy-merch" data-merch-id="${row.id}" data-toggle="modal" data-target="#MerchBuyModal">`,
+                                `        <i class="fas fa-cart-plus"></i> ${l('Buy')}`,
+                                '    </button>',
+                                `    </div>`,
+                                `  </div>`,
+                                `  <div class="card-body">`,
+                                `    ${row.description}`,
+                                `  </div>`,
+                                `  <div class="card-footer">`,
+                                `      <span class="badge badge-primary">${row.price}$</span> <span class="badge badge-secondary">${row.categoryName}</span>`,
+                                `  </div>`,
+                                `</div>`
+                            ].join('');
+                        }
+                        else {
+                            return [
+                                `<div class="card">`,
+                                `  <div class="card-header">`,
+                                `    <h3 class="card-title">${row.name}</h3>`,
+                                `    <div class="card-tools">`,
+                                `      <span class="badge badge-primary">${row.price}$</span> <span class="badge badge-secondary">${row.categoryName}</span>`,
+                                `    </div>`,
+                                `  </div>`,
+                                `  <div class="card-body">`,
+                                `    ${row.description}`,
+                                `  </div>`,
+                                `</div>`
+                            ].join('');
+                        }
                     }
-                    
                 }
             }
         ]
     });
-
 
     $("#TipMerch").on('change', (e) => {
         _$merchTable.ajax.reload();
@@ -147,6 +167,22 @@
         });
     });
 
+    $(document).on('click', '.buy-merch', function (e) {
+        var merchId = $(this).attr("data-merch-id");
+
+        e.preventDefault();
+        abp.ajax({
+            url: abp.appPath + 'Merchandise/BuyModal?merchId=' + merchId,
+            type: 'POST',
+            dataType: 'html',
+            success: function (content) {
+                $('#MerchBuyModal div.modal-content').html(content);
+            },
+            error: function (e) {
+            }
+        });
+    });
+
     abp.event.on('merch.edited', (data) => {
         _$merchTable.ajax.reload();
     });
@@ -186,4 +222,5 @@
             return false;
         }
     });
+
 })(jQuery);

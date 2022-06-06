@@ -14,6 +14,7 @@ namespace KartSpace.Authorization
             context.CreatePermission(PermissionNames.Pages_Tenants, L("Tenants"), multiTenancySides: MultiTenancySides.Host);
             context.CreatePermission(PermissionNames.Pages_Events_Management, L("EventsManagement"));
             context.CreatePermission(PermissionNames.Pages_Merch_Management, L("MerchManagement"));
+            context.CreatePermission(PermissionNames.Pages_Purchases_Management, L("PurchasesManagement"));
         }
 
         private static ILocalizableString L(string name)

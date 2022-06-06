@@ -1,0 +1,109 @@
+﻿@using KartSpace.Web.Startup
+@using KartSpace.Purchases
+@using KartSpace.Web.Models.Purchases
+@using KartSpace.Authorization
+@using Abp.MultiTenancy
+@model PurchaseModalViewModel
+@{
+    ViewBag.Title = L("Purchases");
+    ViewBag.CurrentPageName = PageNames.Purchases;
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Purchases/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Purchases/Index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>@L("Purchases")</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <label class="col-form-label" for="StareComanda">@L("StareComanda")</label>
+                            </div>
+                            <div class="col-md-2" id="toolbox">
+                                <select asp-for="Purchase.StareComanda" asp-items="@Html.GetEnumSelectList<TipStareComanda>()" id="StareComanda" name="StareComanda" class="form-control">
+                                </select>
+                            </div>
+                            <div class="col-md-5">
+
+                            </div>
+                            <div class="col-md-4">
+                                @await Html.PartialAsync("~/Views/Purchases/Index.AdvancedSearch.cshtml")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        @if (IsGranted(PermissionNames.Pages_Purchases_Management) || AbpSession.MultiTenancySide == MultiTenancySides.Host)
+                        {
+                            <div class="table-responsive">
+                                <table id="PurchasesTable" class="table table-borderless">
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>@L("ProductName")</th>
+                                        <th>@L("Price")</th>
+                                        <th>@L("FullName")</th>
+                                        <th>@L("PhoneNumber")</th>
+                                        <th>@L("CreatedOn")</th>
+                                        <th>@L("StareComanda")</th>
+                                        <th style="width: 150px"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="row">
+                                <div class="align-content-center">@L("NoPermissionToViewContent")</div>
+                            </div>
+                        }
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>
+                                    <a href="/Merchandise">
+                                        @L("RecommendationsBasedOnPersonalHistory")
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="table-responsive @(AbpSession.MultiTenancySide == MultiTenancySides.Host ? "" : "d-none")">
+                            <table id="RecommendationTable" class="table table-borderless">
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="StateEditModal" tabindex="-1" role="dialog" aria-labelledby="StateEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>

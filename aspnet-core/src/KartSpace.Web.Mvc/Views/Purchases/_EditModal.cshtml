@@ -1,0 +1,27 @@
+﻿@using KartSpace.Web.Models.Purchases
+@using KartSpace.Web.Models.Common.Modals
+@using KartSpace.Purchases
+@model PurchaseModalViewModel
+@{
+    Layout = null;
+}
+@await Html.PartialAsync("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("EditStare")))
+<form name="StateEditForm" event="form" class="form-horizontal">
+    <input type="hidden" name="PurchaseId" value="@Model.Purchase.Id" />
+    <div class="modal-body">
+        <div class="tab-content mt-4">
+            <div role="tabpanel" class="tab-pane container active" id="edit-state-details">
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label" for="TipStareComanda">@L("StareComanda")</label>
+                    <div class="col-md-9">
+                        <select asp-for="Purchase.StareComanda" asp-items="@Html.GetEnumSelectList<TipStareComanda>()" id="TipStareComanda" name="NouaStareComanda" class="form-control">
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @await Html.PartialAsync("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+</form>
+
+<script src="~/view-resources/Views/Purchases/_EditModal.js" asp-append-version="true"></script>

@@ -40,15 +40,13 @@ namespace KartSpace.Authorization.Users
         public async Task<User> RegisterAsync(string name, string surname, string emailAddress, string userName, string plainPassword, bool isEmailConfirmed)
         {
             CheckForTenant();
-
-            //var tenant = await GetActiveTenantAsync();
-            var tenant = new Tenant();
-            tenant.Id = 1;
-            //registration can only be manually done for host users, where tenant Id is 1
-
-            var user = new User
+            
+            var user = new User();
+        
+            //registration can also be manually done for host users, where tenant Id is null
+            user = new User
             {
-                TenantId = tenant.Id,
+                TenantId = null,
                 Name = name,
                 Surname = surname,
                 EmailAddress = emailAddress,
@@ -59,13 +57,8 @@ namespace KartSpace.Authorization.Users
             };
 
             user.SetNormalizedNames();
-           
-            foreach (var defaultRole in await _roleManager.Roles.Where(r => r.IsDefault).ToListAsync())
-            {
-                user.Roles.Add(new UserRole(tenant.Id, user.Id, defaultRole.Id));
-            }
 
-            await _userManager.InitializeOptionsAsync(tenant.Id);
+            await _userManager.InitializeOptionsAsync(null);
 
             CheckErrors(await _userManager.CreateAsync(user, plainPassword));
             await CurrentUnitOfWork.SaveChangesAsync();

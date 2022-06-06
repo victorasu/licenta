@@ -10,5 +10,6 @@
         public const string Events = "Events";
         public const string Intern = "Intern";
         public const string Merchandise = "Merchandise";
+        public const string Purchases = "Purchases";
     }
 }

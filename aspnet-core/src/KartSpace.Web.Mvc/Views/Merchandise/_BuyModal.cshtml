@@ -1,0 +1,25 @@
+﻿@using KartSpace.Web.Models.Merchandise
+@using KartSpace.Web.Models.Common.Modals
+@model MerchModalViewModel
+@{
+    Layout = null;
+}
+@await Html.PartialAsync("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("BuyMerch")))
+<form name="MerchBuyForm" event="form" class="form-horizontal">
+    <input type="hidden" name="Id" value="@Model.Merch.Id" />
+    <div class="modal-body">
+        <div class="tab-content mt-4">
+            <div role="tabpanel" class="tab-pane container active" id="buy-merch-details">
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label">@L("PhoneNumber")</label>
+                    <div class="col-md-9">
+                        <input for="@Model.PhoneNumber" type="tel" class="form-control" name="PhoneNumber" required maxlength="10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @await Html.PartialAsync("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+</form>
+
+<script src="~/view-resources/Views/Merchandise/_BuyModal.js" asp-append-version="true"></script>

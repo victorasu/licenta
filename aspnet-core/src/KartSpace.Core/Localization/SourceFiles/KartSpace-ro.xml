@@ -1,136 +1,157 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <localizationDictionary culture="ro">
 	<texts>
-		<text name="HomePage" value="Home page" />
-		<text name="About" value="About" />
-		<text name="WelcomeMessage" value="Welcome to KartSpace!" />
-		<text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
-		<text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />
-		<text name="InvalidUserNameOrPassword" value="Invalid user name or password" />
-		<text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
-		<text name="TenantIsNotActive" value="Tenant {0} is not active." />
-		<text name="UserIsNotActiveAndCanNotLogin" value="User {0} is not active and can not log in." />
-		<text name="UserEmailIsNotConfirmedAndCanNotLogin">Your email address is not confirmed. You can not login.</text>
-		<text name="UserLockedOutMessage">The user account has been locked out. Please try again later.</text>
-		<text name="PleaseEnterLoginInformation" value="Please enter login information" />
-		<text name="TenancyName" value="Tenancy name" />
-		<text name="UserNameOrEmail" value="User name or email" />
-		<text name="Password" value="Password" />
-		<text name="ResetPassword" value="Reset Password" />
-		<text name="UpdatePassword" value="Update Password" />
-		<text name="RememberMe" value="Remember me" />
-		<text name="LogIn" value="Log in" />
-		<text name="LoginFailed" value="Login failed!" />
-		<text name="NameSurname" value="Name surname" />
-		<text name="UserName" value="User name" />
-		<text name="Name" value="Name" />
-		<text name="Surname" value="Surname" />
-		<text name="EmailAddress" value="Email address" />
-		<text name="Tenants" value="Tenants" />
-		<text name="SavedSuccessfully" value="Saved successfully" />
-		<text name="CreateNewTenant" value="Create new tenant" />
-		<text name="AdminEmailAddress" value="Admin email address" />
-		<text name="AdminPassword" value="Admin password" />
-		<text name="Save" value="Save" />
-		<text name="Cancel" value="Cancel" />
-		<text name="TenantName_Regex_Description" value="Tenant name must be at least 2 chars, starts with a letter and continue with letter, number, dash or underscore." />
-		<text name="DefaultPasswordIs" value="Default password is {0}" />
-		<text name="CanBeEmptyToLoginAsHost" value="Can be empty to login as host." />
-		<text name="Register" value="Register" />
-		<text name="OrLoginWith" value="Or login with" />
-		<text name="WaitingForActivationMessage" value="Your account is waiting to be activated by system admin." />
-		<text name="TenantSelection" value="Tenant Selection" />
-		<text name="TenantSelection_Detail" value="Please select one of the following tenants." />
-		<text name="Logout" value="Logout" />
-		<text name="RegisterFormUserNameInvalidMessage">Please don't enter an email address for username.</text>
-		<text name="DatabaseConnectionString" value="Database connection string" />
-		<text name="Users" value="Users" />
-		<text name="IsActive" value="Is active" />
-		<text name="FullName" value="Full name" />
-		<text name="CreateNewUser" value="Create new user" />
-		<text name="Yes" value="Yes" />
-		<text name="No" value="No" />
-		<text name="Optional" value="Optional" />
-		<text name="LeaveEmptyToSwitchToHost">Leave empty to switch to the host</text>
-		<text name="CurrentTenant">Current tenant</text>
-		<text name="NotSelected">Not selected</text>
-		<text name="Change">Change</text>
-		<text name="ChangeTenant">Change tenant</text>
-		<text name="MultiLevelMenu">Multi Level Menu</text>
-		<text name="Back">Back</text>
-		<text name="SuccessfullyRegistered">Successfully registered</text>
-		<text name="WaitingForEmailActivation">Your email address should be activated</text>
-		<text name="Roles">Roles</text>
-		<text name="DisplayName">Display Name</text>
-		<text name="Edit">Edit</text>
-		<text name="Delete">Delete</text>
-		<text name="CreateNewRole">Create new role</text>
-		<text name="RoleName">Role Name</text>
-		<text name="Actions">Actions</text>
-		<text name="CouldNotCompleteLoginOperation">Could not complete login operation. Please try again later.</text>
-		<text name="CouldNotValidateExternalUser">Could not validate external user</text>
-		<text name="EditRole">Edit role</text>
-		<text name="EditTenant">Edit tenant</text>
-		<text name="EditUser">Edit user</text>
-		<text name="TenantIdIsNotActive{0}">TenantId {0} is not active</text>
-		<text name="UnknownTenantId{0}">Unknown tenantId {0}</text>
-		<text name="ThisFieldIsRequired">This field is required</text>
-		<text name="PleaseWait">Please wait...</text>
-		<text name="Administration">Administration</text>
-		<text name="ClearAll">Clear all</text>
-		<text name="ClearOthers">Clear others</text>
-		<text name="LabelOptions">Label options</text>
-		<text name="Permissions">Permissions</text>
-		<text name="RoleDescription">Role description</text>
-		<text name="Refresh">Refresh</text>
-		<text name="Create">Create</text>
-		<text name="UserDetails">User details</text>
-		<text name="UserRoles">User roles</text>
-		<text name="ConfirmPassword">Confirm password</text>
-		<text name="Version">Version</text>
+		<text name="HomePage" value="Acasă" />
+		<text name="About" value="Despre noi" />
+		<text name="WelcomeMessage" value="Bine ați venit!" />
+		<text name="FormIsNotValidMessage" value="Formular invalid, verificați datele introduse." />
+		<text name="TenantNameCanNotBeEmpty" value="Numele unitatii nu poate fi gol." />
+		<text name="InvalidUserNameOrPassword" value="Utilizator invalid sau parolă eronată." />
+		<text name="ThereIsNoTenantDefinedWithName{0}" value="Nu există unitate cu numele {0}" />
+		<text name="TenantIsNotActive" value="Unitatea {0} nu este activă." />
+		<text name="UserIsNotActiveAndCanNotLogin" value="Utilizatorul {0} nu este activ și nu poate fi autentificat." />
+		<text name="UserEmailIsNotConfirmedAndCanNotLogin">Adresa de email este necomfirmata. Nu vă puteti autentifica.</text>
+		<text name="UserLockedOutMessage">Contul de utilizator a fost blocat. Încercați mai târziu.</text>
+		<text name="PleaseEnterLoginInformation" value="Introduceți datele de autentificare" />
+		<text name="TenancyName" value="Nume unitate" />
+		<text name="UserNameOrEmail" value="Nume utilizator sau email" />
+		<text name="Password" value="Parolă" />
+		<text name="ResetPassword" value="Resetați parola" />
+		<text name="UpdatePassword" value="Actualizare parolă" />
+		<text name="RememberMe" value="Amintește-ți" />
+		<text name="LogIn" value="Autentificare" />
+		<text name="LoginFailed" value="Autentificare eșuată!" />
+		<text name="NameSurname" value="Nume prenume" />
+		<text name="UserName" value="Nume utilizator" />
+		<text name="Name" value="Nume" />
+		<text name="Surname" value="Prenume" />
+		<text name="EmailAddress" value="Adresă email" />
+		<text name="Tenants" value="Unități" />
+		<text name="SavedSuccessfully" value="Salvat cu succes" />
+		<text name="CreateNewTenant" value="Crează unitate nouă" />
+		<text name="AdminEmailAddress" value="Adresa email admin" />
+		<text name="AdminPassword" value="Parolă admin" />
+		<text name="Save" value="Salvează" />
+		<text name="Cancel" value="Anulează" />
+		<text name="TenantName_Regex_Description" value="Numele unității trebuie să aibă minim 2 caractere, să înceapă cu o literă și să continue cu litere, cratimă sau underscore." />
+		<text name="DefaultPasswordIs" value="Parola inițială este {0}" />
+		<text name="CanBeEmptyToLoginAsHost" value="Poate rămâne gol pentru autentificare publică." />
+		<text name="Register" value="Înregistrare" />
+		<text name="OrLoginWith" value="Sau autentifică-te cu" />
+		<text name="WaitingForActivationMessage" value="Contul acesta este în așteptarea confirmării de inregistrare." />
+		<text name="TenantSelection" value="Selectează unitatea" />
+		<text name="TenantSelection_Detail" value="Selectați cel putin o unitate." />
+		<text name="Logout" value="Delogare" />
+		<text name="RegisterFormUserNameInvalidMessage">Nu folosiți adrese de email pentru numele de utilizator.</text>
+		<text name="DatabaseConnectionString" value="Connection string pentru baza de date" />
+		<text name="Users" value="Utilizatori" />
+		<text name="IsActive" value="Activ" />
+		<text name="FullName" value="Nume întreg" />
+		<text name="CreateNewUser" value="Crează utilizator nou" />
+		<text name="Yes" value="Da" />
+		<text name="No" value="Nu" />
+		<text name="Optional" value="Opțional" />
+		<text name="LeaveEmptyToSwitchToHost">Lasă liber pentru a schimba la perspectiva publică</text>
+		<text name="CurrentTenant">Unitatea curentă</text>
+		<text name="NotSelected">Nu e selectat</text>
+		<text name="Change">Schimbă</text>
+		<text name="ChangeTenant">Schimbă unitate</text>
+		<text name="MultiLevelMenu">Meniu multi-nivel</text>
+		<text name="Back">Înapoi</text>
+		<text name="SuccessfullyRegistered">Înregistrare cu succes</text>
+		<text name="WaitingForEmailActivation">Adresa de email trebuie să fie activată</text>
+		<text name="Roles">Roluri</text>
+		<text name="DisplayName">Nume de afișaj</text>
+		<text name="Edit">Editează</text>
+		<text name="Delete">Șterge</text>
+		<text name="CreateNewRole">Crează rol nou</text>
+		<text name="RoleName">Nume rol</text>
+		<text name="Actions">Acțiuni</text>
+		<text name="CouldNotCompleteLoginOperation">Acțiunea nu a putut fi completată. Încercați mai târziu.</text>
+		<text name="CouldNotValidateExternalUser">Utilizatorul extern nu a putut fi validat.</text>
+		<text name="EditRole">Schimbă rol</text>
+		<text name="EditTenant">Schimbă unitate</text>
+		<text name="EditUser">Schimbă utilizator</text>
+		<text name="TenantIdIsNotActive{0}">ID Unitate {0} nu este activ</text>
+		<text name="UnknownTenantId{0}">ID Unitate {0} este necunoscut</text>
+		<text name="ThisFieldIsRequired">Câmp obligatoriu</text>
+		<text name="PleaseWait">Vă rugăm așteptați...</text>
+		<text name="Administration">Administrare</text>
+		<text name="ClearAll">Șterge tot</text>
+		<text name="ClearOthers">Șterge restul</text>
+		<text name="LabelOptions">Opțiuni etichetă</text>
+		<text name="Permissions">Permisiuni</text>
+		<text name="RoleDescription">Descriere rol</text>
+		<text name="Refresh">Reîncarcă</text>
+		<text name="Create">Crează</text>
+		<text name="UserDetails">Detalii utilizator</text>
+		<text name="UserRoles">Detalii roluri</text>
+		<text name="ConfirmPassword">Confirmă parola</text>
+		<text name="Version">Veriunea</text>
 		<text name="On">On</text>
 		<text name="Off">Off</text>
-		<text name="AreYouSureWantToDelete">Are you sure want to delete {0}?</text>
-		<text name="SuccessfullyDeleted">Successfully deleted</text>
-		<text name="StartTyping">Start Typing</text>
-		<text name="Skins">Skins</text>
-		<text name="Settings">Settings</text>
-		<text name="Filter">Filter</text>
-		<text name="CurrentPassword">Current Password</text>
-		<text name="NewPassword">New Password</text>
-		<text name="ConfirmNewPassword">Confirm New Password</text>
-		<text name="PasswordsDoNotMatch">Passwords do not match</text>
-		<text name="PasswordsMustBeAtLeast8CharactersContainLowercaseUppercaseNumber">Passwords must be at least 8 characters, contain a lowercase, uppercase, and number</text>
-		<text name="UserDeleteWarningMessage">User {0} will be deleted.</text>
-		<text name="RoleDeleteWarningMessage">Role {0} will be deleted and unassigned from all assigned users.</text>
-		<text name="TenantDeleteWarningMessage">Tenant {0} will be deleted.</text>
-		<text name="SearchWithThreeDot">Search...</text>
-		<text name="PleaseEnterAtLeastNCharacter">Please enter at least {0} characters</text>
-		<text name="PleaseEnterNoMoreThanNCharacter">Please enter no more than {0} characters</text>
-		<text name="InvalidEmailAddress">Invalid email address</text>
+		<text name="AreYouSureWantToDelete">Sigur doriți să ștergeți {0}?</text>
+		<text name="SuccessfullyDeleted">Ștergere efectuată cu succes</text>
+		<text name="StartTyping">Începe scrierea</text>
+		<text name="Skins">Skinuri</text>
+		<text name="Settings">Setări</text>
+		<text name="Filter">Filtru</text>
+		<text name="CurrentPassword">Parolă curentă</text>
+		<text name="NewPassword">Parolă nouă</text>
+		<text name="ConfirmNewPassword">Confirmă noua parolă</text>
+		<text name="PasswordsDoNotMatch">Parolele nu se potrivesc</text>
+		<text name="PasswordsMustBeAtLeast8CharactersContainLowercaseUppercaseNumber">Parolele trebuie să aibă minim 8 caractere, să conțină litere mici, de tipar și numere.</text>
+		<text name="UserDeleteWarningMessage">Utilizatorul {0} va fi șters.</text>
+		<text name="RoleDeleteWarningMessage">Rolul {0} va fi șters și deconectat de la utilizatori.</text>
+		<text name="TenantDeleteWarningMessage">Unitatea {0} va fi ștearsă.</text>
+		<text name="SearchWithThreeDot">Caută...</text>
+		<text name="PleaseEnterAtLeastNCharacter">Introduceți cel puțin {0} caractere</text>
+		<text name="PleaseEnterNoMoreThanNCharacter">Introduceți cel mult {0} caractere</text>
+		<text name="InvalidEmailAddress">Adresă email invalidă</text>
 		<text name="InvalidPattern">Invalid</text>
-		<text name="PairsDoNotMatch">Do not match</text>
-		<text name="All">All</text>
+		<text name="PairsDoNotMatch">Perechea nu se potrivește</text>
+		<text name="All">Toate</text>
 		<text name="TotalRecordsCount">Total: {0}</text>
-		<text name="Search">Search</text>
-		<text name="Clear">Clear</text>
-		<text name="ResetPasswordStepOneInfo">1. Enter your administrator password</text>
-		<text name="ResetPasswordStepTwoInfo">2. Copy this random password so you can send it to the user</text>
-		<text name="UsersActivation">Users activation</text>
-		<text name="UnauthorizedAction">Action unauthorized.</text>
-		<text name="CantCreateAsHost">Can not create entities as a host!</text>
+		<text name="Search">Caută</text>
+		<text name="Clear">Șterge</text>
+		<text name="ResetPasswordStepOneInfo">1. Introdu parola de administrator</text>
+		<text name="ResetPasswordStepTwoInfo">2. Copiați parola generată pentru a o transmite utilizatorului</text>
+		<text name="UsersActivation">Activare utilizatori</text>
+		<text name="UnauthorizedAction">Acțiune neautorizată.</text>
+		<text name="CantCreateAsHost">Nu se pot crea entități noi ca administrator!</text>
+		<text name="LookAtShop">Nu uitați să treceți pe la magazin, ați putea găsi ceva interesant!</text>
 
 		<!-- #region Events -->
-		<text name="TipEveniment">Event type</text>
-		<text name="EditEvent">Edit event</text>
-		<text name="Title">Title</text>
-		<text name="Description">Description</text>
-		<text name="Category">Category</text>
-		<text name="StartTime">Start time</text>
-		<text name="EndTime">End time</text>
-		<text name="CreateNewEvent">Create new event</text>
+		<text name="TipEveniment">Tip eveniment</text>
+		<text name="EditEvent">Modifică eveniment</text>
+		<text name="Title">Titlu</text>
+		<text name="Description">Descriere</text>
+		<text name="Category">Categorie</text>
+		<text name="StartTime">Dată început</text>
+		<text name="EndTime">Dată sfârșit</text>
+		<text name="CreateNewEvent">Crează eveniment nou</text>
 		<text name="Events">Evenimente</text>
-		<text name="EventsManagement">Events Management</text>
+		<text name="EventsManagement">Administrare Evenimente</text>
+		<!-- #endregion -->
+
+		<!-- #region Merch -->
+		<text name="Merchandise">Magazin</text>
+		<text name="TipMerch">Tip produs</text>
+		<text name="EditMerch">Modifică produs</text>
+		<text name="CreateNewMerch">Crează produs nou</text>
+		<text name="Price">Preț</text>
+		<text name="MerchManagement">Administrare Magazin</text>
+		<text name="BuyMerch">Cumpără produs</text>
+		<!-- #endregion -->
+
+		<!-- #region Purchases -->
+		<text name="Purchases">Comenzi</text>
+		<text name="ProductName">Numele produsului</text>
+		<text name="StareComanda">Starea comenzii</text>
+		<text name="PhoneNumber">Număr de telefon</text>
+		<text name="CreatedOn">Creată la</text>
+		<text name="RecommendationsBasedOnPersonalHistory">Conform istoricului tău de comenzi, următoarele produse ți s-ar potrivi.</text>
+		<text name="PurchasesManagement">Administrare Comenzi</text>
 		<!-- #endregion -->
 	</texts>
 </localizationDictionary>

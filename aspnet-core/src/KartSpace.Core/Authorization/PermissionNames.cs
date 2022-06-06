@@ -12,5 +12,7 @@
         public const string Pages_Events_Management = "Pages.Events.Management";
 
         public const string Pages_Merch_Management = "Pages.Merch.Management";
+
+        public const string Pages_Purchases_Management = "Pages.Purchases.Management";
     }
 }

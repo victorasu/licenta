@@ -12,6 +12,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\module\KartSpace.MLPredictor\KartSpace.MLPredictor.csproj" />
     <ProjectReference Include="..\KartSpace.Core\KartSpace.Core.csproj" />
   </ItemGroup>
 </Project>

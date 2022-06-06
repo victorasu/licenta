@@ -18,7 +18,7 @@ namespace KartSpace.Web.Views.Shared.Components.SideBarUserArea
             }
 
             return LoginInformations.Tenant == null
-                ? ".\\" + userName
+                ? "Public\\" + userName
                 : LoginInformations.Tenant.TenancyName + "\\" + userName;
         }
     }

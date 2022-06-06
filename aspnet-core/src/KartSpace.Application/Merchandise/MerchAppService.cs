@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -9,20 +8,28 @@ using Abp.Domain.Repositories;
 using Abp.Extensions;
 using Abp.Linq.Extensions;
 using Abp.UI;
+using KartSpace.Authorization.Users;
 using KartSpace.Merchandise.Dto;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
+using KartSpace.Purchases;
+using Microsoft.AspNetCore.Mvc;
 
 namespace KartSpace.Merchandise
 {
     public class MerchAppService : AsyncCrudAppService<Merch, MerchDto, int, PagedMerchResultRequestDto, MerchDto, MerchDto, EntityDto<int>, EntityDto<int>>, IMerchAppService
     {
         private readonly IRepository<Merch, int> _merchRepository;
+        private readonly UserManager _userManager;
+        private readonly IRepository<Purchase, int> _purchaseRepository;
 
         public MerchAppService(
-            IRepository<Merch, int> merchRepository)
+            IRepository<Merch, int> merchRepository,
+            UserManager userManager,
+            IRepository<Purchase, int> purchaseRepository)
             : base(merchRepository)
         {
             _merchRepository = merchRepository;
+            _userManager = userManager;
+            _purchaseRepository = purchaseRepository;
             LocalizationSourceName = KartSpaceConsts.LocalizationSourceName;
         }
 
@@ -51,6 +58,8 @@ namespace KartSpace.Merchandise
                 throw new UserFriendlyException(L("UnauthorizedAction"), L("CantCreateAsHost"));
             }
 
+            merch.TenantId = AbpSession.TenantId.Value;
+
             var merchData = await _merchRepository.UpdateAsync(merch);
 
             return ObjectMapper.Map<MerchDto>(merchData);
@@ -75,6 +84,10 @@ namespace KartSpace.Merchandise
                         where category.Equals(TipMerch.Alege) ? true : produs.Category.Equals(category)
                         select produs;
 
+            //query = query
+            //    .Skip(input.SkipCount)
+            //    .Take(input.MaxResultCount);
+
             var queryRez = await AsyncQueryableExecuter.ToListAsync(query);
 
             var merchList = queryRez.Select(x =>
@@ -85,7 +98,12 @@ namespace KartSpace.Merchandise
                 }
             ).ToList();
 
-            var merchDisplay = new PagedResultDto<MerchResultDto>(merchList.Count, merchList);
+            var merchPaginated = merchList
+                .Skip(input.SkipCount)
+                .Take(input.MaxResultCount)
+                .ToList();
+
+            var merchDisplay = new PagedResultDto<MerchResultDto>(merchList.Count, merchPaginated);
 
             return merchDisplay;
         }

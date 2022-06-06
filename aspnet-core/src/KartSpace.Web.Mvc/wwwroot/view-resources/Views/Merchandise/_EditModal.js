@@ -15,7 +15,7 @@
         _merchService.update(merch).done(function () {
             _$modal.modal('hide');
             abp.notify.info(l('SavedSuccessfully'));
-            abp.merch.trigger('merch.edited', merch);
+            abp.event.trigger('merch.edited', merch);
         }).always(function () {
             abp.ui.clearBusy(_$form);
         });

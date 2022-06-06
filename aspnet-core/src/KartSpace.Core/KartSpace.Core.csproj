@@ -22,4 +22,7 @@
     <PackageReference Include="Abp.ZeroCore.EntityFrameworkCore" Version="7.2.1" />
     <PackageReference Include="Castle.Windsor.MsDependencyInjection" Version="3.4.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Purchases\" />
+  </ItemGroup>
 </Project>
