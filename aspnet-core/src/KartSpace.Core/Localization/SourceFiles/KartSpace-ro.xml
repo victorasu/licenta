@@ -51,7 +51,7 @@
 		<text name="Yes" value="Da" />
 		<text name="No" value="Nu" />
 		<text name="Optional" value="Opțional" />
-		<text name="LeaveEmptyToSwitchToHost">Lasă liber pentru a schimba la perspectiva publică</text>
+		<text name="LeaveEmptyToSwitchToHost">Lasă liber pentru a folosi perspectiva publică</text>
 		<text name="CurrentTenant">Unitatea curentă</text>
 		<text name="NotSelected">Nu e selectat</text>
 		<text name="Change">Schimbă</text>

@@ -136,11 +136,13 @@ namespace KartSpace.Purchases
             }
         }
 
+        /// <summary>
+        /// Based on last purchase, recommends first most confident prediction
+        /// If there is no last purchase, recommends two most popular products on the market
+        /// </summary>
+        /// <returns>Paged result since data is to be displayed in table</returns>
         public async Task<PagedResultDto<PurchaseRecommendationDto>> GetRecommendationsAsync()
         {
-            //bazandu-se pe ultimul purchase, face o recomandare de 2 produse care au cea mai mare marja de incredere de la prediction
-            //daca nu are nici un purchase, recomanda primele 2 cele mai cumparate produse //done
-
             var lastPurchaseOrEmpty = _purchaseRepository
                 .GetAll()
                 .OrderByDescending(x=>x.CreationDateTime)

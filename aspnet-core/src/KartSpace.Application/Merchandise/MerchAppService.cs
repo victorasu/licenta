@@ -18,18 +18,12 @@ namespace KartSpace.Merchandise
     public class MerchAppService : AsyncCrudAppService<Merch, MerchDto, int, PagedMerchResultRequestDto, MerchDto, MerchDto, EntityDto<int>, EntityDto<int>>, IMerchAppService
     {
         private readonly IRepository<Merch, int> _merchRepository;
-        private readonly UserManager _userManager;
-        private readonly IRepository<Purchase, int> _purchaseRepository;
 
         public MerchAppService(
-            IRepository<Merch, int> merchRepository,
-            UserManager userManager,
-            IRepository<Purchase, int> purchaseRepository)
+            IRepository<Merch, int> merchRepository)
             : base(merchRepository)
         {
             _merchRepository = merchRepository;
-            _userManager = userManager;
-            _purchaseRepository = purchaseRepository;
             LocalizationSourceName = KartSpaceConsts.LocalizationSourceName;
         }
 
@@ -83,10 +77,6 @@ namespace KartSpace.Merchandise
             var query = from produs in produse
                         where category.Equals(TipMerch.Alege) ? true : produs.Category.Equals(category)
                         select produs;
-
-            //query = query
-            //    .Skip(input.SkipCount)
-            //    .Take(input.MaxResultCount);
 
             var queryRez = await AsyncQueryableExecuter.ToListAsync(query);
 
