@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
+using Abp.AspNetCore.Mvc.Authorization;
 using KartSpace.Merchandise;
 using KartSpace.Web.Models.Merchandise;
 
 namespace KartSpace.Web.Controllers;
 
+[AbpMvcAuthorize()]
 public class MerchandiseController : KartSpaceControllerBase
 {
     private readonly IMerchAppService _merchAppService;

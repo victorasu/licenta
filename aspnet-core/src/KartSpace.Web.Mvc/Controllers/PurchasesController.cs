@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
+using Abp.AspNetCore.Mvc.Authorization;
 using KartSpace.Controllers;
 using KartSpace.Merchandise;
 using KartSpace.Purchases;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KartSpace.Web.Controllers
 {
+    [AbpMvcAuthorize()]
     public class PurchasesController : KartSpaceControllerBase
     {
         private readonly IPurchaseAppService _purchaseAppService;

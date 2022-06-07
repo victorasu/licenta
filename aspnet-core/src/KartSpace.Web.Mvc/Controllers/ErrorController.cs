@@ -1,4 +1,5 @@
 ﻿using System;
+using Abp.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Abp.AspNetCore.Mvc.Controllers;
@@ -7,6 +8,7 @@ using Abp.Web.Mvc.Models;
 
 namespace KartSpace.Web.Controllers
 {
+    [AbpMvcAuthorize()]
     public class ErrorController : AbpController
     {
         private readonly IErrorInfoBuilder _errorInfoBuilder;

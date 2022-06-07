@@ -3,10 +3,12 @@ using KartSpace.Events;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
+using Abp.AspNetCore.Mvc.Authorization;
 using KartSpace.Web.Models.Events;
 
 namespace KartSpace.Web.Controllers;
 
+[AbpMvcAuthorize()]
 public class EventsController : KartSpaceControllerBase
 {
     private readonly IEventAppService _eventAppService;

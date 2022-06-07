@@ -33,6 +33,7 @@ using KartSpace.Web.Views.Shared.Components.TenantChange;
 
 namespace KartSpace.Web.Controllers
 {
+    [AbpMvcAuthorize()]
     public class AccountController : KartSpaceControllerBase
     {
         private readonly UserManager _userManager;
